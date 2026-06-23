@@ -36,6 +36,9 @@ h1, h2, h3, h4, h5, h6 { color: var(--text-1); }
 h1 { line-height: 3.6rem; }
 h2 { font-size: 1.6rem; line-height: 1.8rem; }
 h3 { font-size: 1.4rem; line-height: 1.8rem; }
+h4 { font-size: 1.25rem; margin-block-start: 2rem; margin-block-end: 0.5rem; }
+h5 { font-size: 1.125rem; margin-block-start: 2rem; margin-block-end: 0.5rem; }
+h6 { font-size: 1rem; margin-block-start: 2rem; margin-block-end: 0.5rem; }
 
 a { color: var(--text-link); }
 
@@ -203,35 +206,34 @@ h2.page-header a:hover {
 .project-name { margin-bottom: 0.25rem; }
 .project-tag-list {
   padding: 0;
+  margin: 1.5rem 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
 }
 .project-tag-list li {
-  display: inline-block;
   border: 1px solid var(--text-2);
-  margin: 3px 3px 3px 0;
   padding: 2px 5px;
   border-radius: 3px;
-  font-size: 0.9rem;
   color: var(--text-1);
+  white-space: nowrap;
 }
-.project-detail-cover {
-  margin: 1rem 0;
-}
-.project-detail-cover img {
-  max-height: 250px;
-  border-radius: 3px;
-}
-
 .project-date-range {
-  font-size: 1rem;
   color: var(--text-2);
   margin: 0.25rem 0;
 }
 .project-role {
-  font-size: 1rem;
   color: var(--text-2);
   margin: 0.25rem 0;
 }
 .project-short-description { margin: 0.5rem 0; }
+.project-links-heading {
+  margin: 0.75rem 0;
+}
+.project-link-item {
+  margin: 0.25rem 0 0;
+}
 .read-more { margin: 0.5rem 0 0; }
 
 .blog-post-preview-text {

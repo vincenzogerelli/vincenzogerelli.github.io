@@ -2,21 +2,40 @@
 layout: base.njk
 mainId: portfolio
 ---
+<h2 class="page-header"><a href="/portfolio/">Portfolio</a></h2>
+
 <div class="project">
-  <h2 class="page-header">{{ title }}</h2>
-  {% if immagine %}
-  <div class="project-detail-cover">
-    <img src="{{ immagine }}" alt="Image of {{ title }}"/>
+  <div class="project-header">
+    <h3 class="project-name"><a href="{{ page.url }}">{{ title }}</a></h3>
+    <div class="index-item-header">
+      {% if immagine %}
+      <div class="cover">
+        <img src="{{ immagine }}" alt="Image of {{ title }}"/>
+      </div>
+      {% endif %}
+      <div class="{% if not immagine %}full-width{% endif %}">
+        <div class="project-details">
+          {% if anno %}
+          <p class="project-date-range">{{ anno }}</p>
+          {% endif %}
+          {% if ruolo %}
+          <p class="project-role">{{ ruolo }}</p>
+          {% endif %}
+          {% if tech %}
+          <ul class="project-tag-list">
+            {%- for t in tech %}
+            <li>{{ t }}</li>
+            {%- endfor %}
+          </ul>
+          {% endif %}
+        </div>
+        {% if repo %}
+        <h3 class="project-links-heading">Links</h3>
+        <p class="project-link-item"><a href="{{ repo }}" target="_blank">View on App Store →</a></p>
+        {% endif %}
+      </div>
+    </div>
   </div>
-  {% endif %}
-  <div class="project-details">
-    {% if anno %}
-    <p class="project-date-range">{{ anno }}</p>
-    {% endif %}
-    {% if ruolo %}
-    <p class="project-role">{{ ruolo }}</p>
-    {% endif %}
-  </div>
+  <h3>Description</h3>
   {{ content | safe }}
-  {% if repo %}<p><a href="{{ repo }}">View on App Store →</a></p>{% endif %}
 </div>
