@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title %}{{ title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ description or site.description }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="alternate" type="application/atom+xml" href="/feed.xml" title="{{ site.title }}: Blog Feed">
+</head>
+<body>
+  <header>
+    <h1 id="site-title"><a href="/">{{ site.title }}</a></h1>
+    <nav>
+      <ul class="menu">
+      {%- for item in site.menu %}
+        <li class="{{ item.cls }}"><a href="{{ item.url }}">{{ item.text }}</a></li>
+      {%- endfor %}
+      </ul>
+    </nav>
+  </header>
+
+  <nav id="sticky-menu" class="sticky-menu hidden">
+    <ul class="menu-horizontal">
+    {%- for item in site.menu %}
+      <li class="{{ item.cls }}"><a href="{{ item.url }}">{{ item.text }}</a></li>
+    {%- endfor %}
+    </ul>
+  </nav>
+
+  <main id="{{ mainId }}">
+    {{ content | safe }}
+  </main>
+
+  <script>
+    (function() {
+      var nav = document.querySelector('header nav');
+      var sticky = document.getElementById('sticky-menu');
+      var observer = new IntersectionObserver(function(entries) {
+        sticky.classList.toggle('hidden', entries[0].isIntersecting);
+      }, { threshold: 0 });
+      observer.observe(nav);
+    })();
+  </script>
+</body>
+</html>

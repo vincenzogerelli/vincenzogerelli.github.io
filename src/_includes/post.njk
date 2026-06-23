@@ -1,0 +1,13 @@
+---
+layout: base.njk
+mainId: blog
+---
+<div class="post">
+  <article>
+    <h2 class="page-header">{{ title }}</h2>
+    <p class="post-date">
+      <time datetime="{{ page.date | dataIso }}">{{ page.date | dataLeggibile }}</time>
+    </p>
+    {{ content | safe }}
+  </article>
+</div>

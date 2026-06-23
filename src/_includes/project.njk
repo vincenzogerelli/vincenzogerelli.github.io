@@ -1,0 +1,17 @@
+---
+layout: base.njk
+mainId: portfolio
+---
+<div class="project">
+  <h2 class="page-header">{{ title }}</h2>
+  <div class="project-details">
+    {% if anno %}
+    <p class="project-date-range">{{ anno }}</p>
+    {% endif %}
+    {% if ruolo %}
+    <p class="project-role">{{ ruolo }}</p>
+    {% endif %}
+  </div>
+  {{ content | safe }}
+  {% if repo %}<p><a href="{{ repo }}">View on App Store →</a></p>{% endif %}
+</div>
