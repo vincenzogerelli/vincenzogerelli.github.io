@@ -36,6 +36,10 @@
     {{ content | safe }}
   </main>
 
+  <dialog class="lightbox" id="lightbox">
+    <img src="" alt="">
+  </dialog>
+
   <script>
     (function() {
       var nav = document.querySelector('header nav');
@@ -44,6 +48,19 @@
         sticky.classList.toggle('hidden', entries[0].isIntersecting);
       }, { threshold: 0 });
       observer.observe(nav);
+
+      var dialog = document.getElementById('lightbox');
+      var dialogImg = dialog.querySelector('img');
+      document.querySelectorAll('.zoomable').forEach(function(img) {
+        img.addEventListener('click', function() {
+          dialogImg.src = img.src;
+          dialogImg.alt = img.alt;
+          dialog.showModal();
+        });
+      });
+      dialog.addEventListener('click', function() {
+        dialog.close();
+      });
     })();
   </script>
 </body>

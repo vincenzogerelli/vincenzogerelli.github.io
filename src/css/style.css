@@ -236,6 +236,27 @@ h2.page-header a:hover {
 }
 .read-more { margin: 0.5rem 0 0; }
 
+.project-images {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: flex-start;
+}
+.project-images li {
+  flex-basis: calc(50% - 5px);
+  display: flex;
+  justify-content: center;
+}
+.project-images img {
+  max-width: 100%;
+  max-height: 400px;
+  height: auto;
+  border-radius: 3px;
+}
+
 .blog-post-preview-text {
   color: var(--text-2);
   font-size: 1rem;
@@ -260,6 +281,10 @@ dl.links div:first-child {
 }
 .flex-image-container p {
   margin: 0;
+}
+.flex-image-container img {
+  max-width: 100%;
+  height: auto;
 }
 
 .index-item-header .cover img {

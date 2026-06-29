@@ -14,6 +14,8 @@ tech:
   - iot
 ---
 
+### Description
+
 R-Easy is an IoT smart-bin system built end-to-end: Arduino handles sensors and actuators, Raspberry Pi aggregates data, a remote server performs real-time processing, and an iOS app provides status monitoring and geolocation.
 
 Won 1st place at Hack.Gov 2019, Italy's largest public-administration hackathon (200+ international participants).

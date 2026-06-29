@@ -29,13 +29,14 @@ mainId: portfolio
           </ul>
           {% endif %}
         </div>
-        {% if repo %}
+        {% if links %}
         <h3 class="project-links-heading">Links</h3>
-        <p class="project-link-item"><a href="{{ repo }}" target="_blank">View on App Store →</a></p>
+        {% for link in links %}
+        <p class="project-link-item"><a href="{{ link.url }}" target="_blank">{{ link.label }}</a></p>
+        {% endfor %}
         {% endif %}
       </div>
     </div>
   </div>
-  <h3>Description</h3>
   {{ content | safe }}
 </div>

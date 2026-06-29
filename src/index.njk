@@ -23,24 +23,3 @@ mainId: about
     <p><img class="zoomable" src="/img/city-2.jpg" alt="A photo of Torre Del Greco"></p>
   </div>
 </div>
-
-<dialog class="lightbox" id="lightbox">
-  <img src="" alt="">
-</dialog>
-
-<script>
-  (function() {
-    var dialog = document.getElementById('lightbox');
-    var dialogImg = dialog.querySelector('img');
-    document.querySelectorAll('.zoomable').forEach(function(img) {
-      img.addEventListener('click', function() {
-        dialogImg.src = img.src;
-        dialogImg.alt = img.alt;
-        dialog.showModal();
-      });
-    });
-    dialog.addEventListener('click', function() {
-      dialog.close();
-    });
-  })();
-</script>
